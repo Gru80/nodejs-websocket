@@ -1,0 +1,25 @@
+{
+  "name": "nodejs-websocket",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Gru80/nodejs-websocket.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Gru80/nodejs-websocket/issues"
+  },
+  "homepage": "https://github.com/Gru80/nodejs-websocket#readme",
+  "dependencies": {
+    "express": "^4.17.3",
+    "websocket": "^1.0.34",
+    "ws": "^8.5.0"
+  }
+}
