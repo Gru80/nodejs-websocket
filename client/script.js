@@ -5,7 +5,7 @@ const mywsServer = new WebSocket(url);
 
 
 //DOM Elements
-const myMessages = document.getElementById('messages');
+const chat = document.getElementById('chat');
 const myInput = document.getElementById('message');
 const sendBtn = document.getElementById('send');
 
@@ -29,10 +29,12 @@ function sendMsg() {
 
 //Creating DOM element to show received messages on browser page
 function msgGeneration(msg) {
-    const newMessage = document.createElement('p');
     const stamp = new Date().toLocaleString();
-    newMessage.innerText = `${stamp}: ${msg}`;
-    myMessages.appendChild(newMessage);
+    const row = chat.insertRow();
+    const dateCell = row.insertCell(0)
+    dateCell.innerText = stamp;
+    dateCell.style.color = 'gray';
+    row.insertCell(1).innerText = msg;
 }
 
 //enabling send message when connection is open
