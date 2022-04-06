@@ -36,12 +36,14 @@ function msgGeneration(msg) {
 }
 
 //enabling send message when connection is open
-mywsServer.onopen = function() {
-    sendBtn.disabled = false
+mywsServer.onopen = () => {
+    console.log('WebSocket connection opened');
+    sendBtn.disabled = false;
 }
 
 //handling message event
-mywsServer.onmessage = function(event) {
-    const { data } = event
-    msgGeneration(data)
+mywsServer.onmessage = (event) => {
+    const { data } = event;
+    console.log('message received: '+ data)
+    msgGeneration(data);
 }
