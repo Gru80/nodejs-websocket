@@ -1,6 +1,6 @@
 //Websocekt variables
-const PORT = window.location.port;
-const url = 'ws://localhost:' + PORT + '/myWebsocket';
+const HOST = window.location.host;
+const url = `ws://${HOST}/myWebsocket`;
 const mywsServer = new WebSocket(url);
 
 
@@ -23,6 +23,7 @@ myInput.addEventListener('keyup', (event) => {
 
 //Sending message from client
 function sendMsg() {
+    myInput.select();
     mywsServer.send(myInput.value);
 }
 
