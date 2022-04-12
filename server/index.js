@@ -16,11 +16,12 @@ const wsServer = new WebSocket.Server({
 });
 
 // define action on connection
-wsServer.on('connection', function(ws) {
+wsServer.on('connection', (ws) => {
     // action on messsage sent
-    ws.on('message', function(msg) {
+    ws.on('message', (msg) => {
+        // serve all connected clients...
         wsServer.clients.forEach(function each(client) {
-            // check if client is ready
+            // ...but only if client is ready
             if (client.readyState === WebSocket.OPEN) {
               client.send(msg.toString());
             }
